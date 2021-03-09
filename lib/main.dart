@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import './app_config.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppConfig.configure((result) {
+    if (result) {
+      runApp(MyApp());
+    } else {
+      print('Failed running!');
+    }
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +40,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  /*  */
   MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning

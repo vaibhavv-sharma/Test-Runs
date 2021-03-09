@@ -53,16 +53,6 @@ android {
         }
     }
 
-    flavorDimensions "default"
-    productFlavors{
-        develop {
-            dimension "default"
-            applicationIdSuffix ".dev"
-        }
-        production {
-            dimension "default"
-        }
-    }
 }
 
 flutter {
